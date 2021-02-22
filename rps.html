@@ -1,0 +1,103 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    1. have the player select rock paper or scissors through an input
+    2. have the computer randomly select rock paper or scissors
+    3. create the logic to decide who wins
+    3.5 have the game play 5 rounds
+    4. have the logic declare the winner
+    5. keep store of the points
+
+
+    <script>
+
+        /* default game logic and keeps track of player score */
+        function game() {
+            /* default scores of zero */
+            let playerScore = 0,
+                computerScore = 0;  
+
+        /* takes input to determine player's choice of r,p, or s */
+            let playerSelection = window.prompt();
+                
+
+
+
+
+
+        }
+        
+
+
+        
+        /* computer randomly picks rock, paper, or scissors */
+        function computerPlay() {
+            let choices = ['rock', 'paper', 'scissors'];
+            let choice = choices[Math.floor(Math.random() * choices.length)];
+
+        }
+        /* sets computerSelection to be a randomized choice each time */
+        const computerSelection = computerPlay();
+
+
+        /* game start for 1 round of rock paper scissors */
+        function playRound(playerSelection, computerSelection) {
+            if (playerSelection.toLowerCase() == 'rock' && computerSelection == 'scissors') {
+                playerScore = ++playerScore;
+                return "You win! rock beats scissors";
+            }
+            else if (playerSelection.toLowerCase() == 'rock' && computerSelection == 'paper') {
+                return "You lose! paper beats rock";
+            }
+            else if (playerSelection.toLowerCase() == 'rock' && computerSelection == 'rock') {
+                return "You tie";
+            }
+            else if (playerSelection.toLowerCase() == 'paper' && computerSelection == 'paper') {
+                return "You tie";
+            }
+            else if (playerSelection.toLowerCase() == 'paper' && computerSelection == 'rock') {
+                return "You win! Paper beats rock";
+            }
+            else if (playerSelection.toLowerCase() == 'paper' && computerSelection == 'scissors') {
+                return "You lose! Scissors beats paper";
+            }
+            else if (playerSelection.toLowerCase() == 'scissors' && computerSelection == 'scissors') {
+                return "You tie";
+            }
+            else if (playerSelection.toLowerCase() == 'scissors' && computerSelection == 'paper') {
+                return "You win! Scissors beats paper";
+            }
+            else if (playerSelection.toLowerCase() == 'scissors' && computerSelection == 'rock') {
+                return "You lose! Rock beats scissors";
+            }
+
+
+        }
+
+
+        
+
+        /* computer seleciton for r,p,s 
+        function computerSelection() {
+
+        }*/
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
