@@ -40,13 +40,12 @@
 
         /* Do you want to play again, resets */
         function playAgain() {
-            console.log("Do you want to play again? yes or no")
-            let doyouwanttoplayagain = window.prompt();
+            let doyouwanttoplayagain = window.prompt("Do you want to play again? yes or no");
             if (doyouwanttoplayagain.toLowerCase() == "yes") {
                 reset();
                 game();
             }
-            else if (doyouwanttoplayagain.toLowerCase() == "no") {
+            else {
                 console.log("Thank you for playing");
                 reset(); 
             } 
@@ -107,7 +106,7 @@
             while ((playerScore < 5) || (computerScore < 5)) {     
 
                 /* takes input to determine player's choice of r,p, or s */
-                let playerSelection = window.prompt();
+                let playerSelection = window.prompt("rock, paper, or scissors?");
                     
                 /* sets computerSelection to be a randomized choice each time */
                 const computerSelection = computerPlay();
