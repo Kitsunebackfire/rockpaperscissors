@@ -16,77 +16,123 @@
 
     <script>
 
-        /* default game logic and keeps track of player score */
-        function game() {
-            /* default scores of zero */
-            let playerScore = 0,
-                computerScore = 0;  
-
-        /* takes input to determine player's choice of r,p, or s */
-            let playerSelection = window.prompt();
-                
-
-
-
-
-
-        }
+        /* default scores of zero */
+        let playerScore = 0;
+        let computerScore = 0; 
+        /* blank string required to be declared in order for playround() to function.
+        let results = "";
         
-
-
+        
+        
         
         /* computer randomly picks rock, paper, or scissors */
         function computerPlay() {
-            let choices = ['rock', 'paper', 'scissors'];
+            let choices = ["rock", "paper", "scissors"];
             let choice = choices[Math.floor(Math.random() * choices.length)];
-
+            return choice;
         }
-        /* sets computerSelection to be a randomized choice each time */
-        const computerSelection = computerPlay();
 
+        /* reset score function */
+        function reset() {
+            playerScore = 0;
+            computerScore = 0;
+        }
+
+        /* Do you want to play again, resets */
+        function playAgain() {
+            console.log("Do you want to play again? yes or no")
+            let doyouwanttoplayagain = window.prompt();
+            if (doyouwanttoplayagain.toLowerCase() == "yes") {
+                reset();
+                game();
+            }
+            else if (doyouwanttoplayagain.toLowerCase() == "no") {
+                console.log("Thank you for playing");
+                reset(); 
+            } 
+        }
+        
 
         /* game start for 1 round of rock paper scissors */
         function playRound(playerSelection, computerSelection) {
-            if (playerSelection.toLowerCase() == 'rock' && computerSelection == 'scissors') {
-                playerScore = ++playerScore;
-                return "You win! rock beats scissors";
+            if (playerSelection.toLowerCase() == "rock" && computerSelection == 'scissors') {
+                results = "You win! rock beats scissors";
+                playerScore++;
+                return results;
             }
             else if (playerSelection.toLowerCase() == 'rock' && computerSelection == 'paper') {
-                return "You lose! paper beats rock";
+                results = "You lose! paper beats rock";
+                computerScore++;
+                return results;
             }
             else if (playerSelection.toLowerCase() == 'rock' && computerSelection == 'rock') {
-                return "You tie";
+                results = "You tie!";
+                return results;
             }
             else if (playerSelection.toLowerCase() == 'paper' && computerSelection == 'paper') {
-                return "You tie";
+                results = "You tie!";
+                return results;
             }
             else if (playerSelection.toLowerCase() == 'paper' && computerSelection == 'rock') {
-                return "You win! Paper beats rock";
+                results = "You win! paper beats rock";
+                playerScore++;
+                return results;
             }
             else if (playerSelection.toLowerCase() == 'paper' && computerSelection == 'scissors') {
-                return "You lose! Scissors beats paper";
+                results = "You lose! scissors beats paper";
+                computerScore++;
+                return results;
             }
             else if (playerSelection.toLowerCase() == 'scissors' && computerSelection == 'scissors') {
-                return "You tie";
+                results = "You tie!";
+                return results;
             }
             else if (playerSelection.toLowerCase() == 'scissors' && computerSelection == 'paper') {
-                return "You win! Scissors beats paper";
+                results = "You win! scissors beats paper";
+                playerScore++;
+                return results;
             }
             else if (playerSelection.toLowerCase() == 'scissors' && computerSelection == 'rock') {
-                return "You lose! Rock beats scissors";
+                results = "You lose! rock beats scissors";
+                computerScore++;
+                return results;
             }
 
 
         }
 
+        /* default game logic and keeps track of player score */
+        function game() {
+            console.log("Welcome to rock, paper, and scissors")
+            while ((playerScore < 5) || (computerScore < 5)) {     
 
-        
+                /* takes input to determine player's choice of r,p, or s */
+                let playerSelection = window.prompt();
+                    
+                /* sets computerSelection to be a randomized choice each time */
+                const computerSelection = computerPlay();
 
-        /* computer seleciton for r,p,s 
-        function computerSelection() {
+                playRound(playerSelection,computerSelection);
 
-        }*/
+            console.log(results);
+            console.log(playerScore);
+            console.log(computerScore);
 
+            if (playerScore == 5) {
+                        console.log("Player wins")
+                        break;
+                    }
+                    else if (computerScore == 5) {
+                        console.log("Computer wins")
+                        break;
+                    }
+
+
+            
+
+            }
+            playAgain();
+        }
 
 
 
