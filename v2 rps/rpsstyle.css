@@ -1,0 +1,63 @@
+html {
+    height: 100%;
+    min-height: 100%;
+}
+
+.header {
+    text-align: center;
+    
+    padding-top: 70px;
+    padding-bottom: 40px;
+}
+
+#image-container {
+    display: flex;
+    
+}
+
+#image {
+    flex: 1;
+    align-items: center;
+    max-width: 40%;
+    padding-left: 30%;
+    padding-right: 30%;
+}
+
+.buttonContainer {
+    
+    padding: 10px;
+    display:flex;
+    padding-left: 30%;
+    padding-right: 30%;
+    
+
+}
+
+#rockbtn {
+    flex: 1;
+}
+
+#paperbtn {
+    flex: 1;
+}
+
+#scissorsbtn {
+    flex: 1;
+}
+
+.score {
+    display: flex;
+}
+
+#results {
+    text-align: center;
+    flex: 1;
+}
+
+#newGame {
+   text-align: center; 
+}
+
+.reset {
+    
+}
